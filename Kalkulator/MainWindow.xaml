@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kalkulator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="400">
+        Title="MainWindow" Height="450" Width="500">
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -21,23 +21,34 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
+        
+        
+       <TextBlock x:Name="result" TextAlignment="Right" FontSize="35" Grid.ColumnSpan="4" />
+       <TextBlock x:Name="numbers" TextAlignment="Right" FontSize="25" Margin="0,5,0,0" Grid.Row="1" Grid.ColumnSpan="4" />
 
-       <TextBlock x:Name="result" TextAlignment="Right" FontSize="25" Grid.ColumnSpan="4" />
-       <TextBlock x:Name="numbers" TextAlignment="Right" FontSize="15" Margin="0,5,0,0" Grid.Row="1" Grid.ColumnSpan="4" />
-
-        <Button x:Name="nine" Grid.Row="2" Margin="5" Content="9" Click="Button_Click" />
-        <Button x:Name="eight" Grid.Row="2" Grid.Column="1" Margin="5" Content="8" Click="Button_Click" />
-        <Button x:Name="seven" Grid.Row="2" Grid.Column="2" Margin="5" Content="7" Click="Button_Click" />
+        <Button Grid.Row="2" Margin="5" Content="9" Click="Button_Click" />
+        <Button  Grid.Row="2" Grid.Column="1" Margin="5" Content="8" Click="Button_Click" />
+        <Button  Grid.Row="2" Grid.Column="2" Margin="5" Content="7" Click="Button_Click" />
         <Button Grid.Row="2" Grid.Column="3" Margin="5" Content="+" Click="Button_ClickAdd" />
-        <Button x:Name="six" Grid.Row="3" Margin="5" Content="6" Click="Button_Click"/>
-        <Button x:Name="five" Grid.Row="3" Grid.Column="1" Margin="5" Content="5" Click="Button_Click"/>
-        <Button x:Name="four" Grid.Row="3" Grid.Column="2" Margin="5" Content="4" Click="Button_Click"/>
-        <Button Grid.Row="3" Grid.Column="3" Margin="5" Content="-" Click="Button_Click"/>
-        <Button x:Name="three" Grid.Row="4" Margin="5" Content="3" Click="Button_Click"/>
-        <Button x:Name="two" Grid.Row="4" Grid.Column="1" Margin="5" Content="2" Click="Button_Click"/>
-        <Button x:Name="one" Grid.Row="4" Grid.Column="2" Margin="5" Content="1" Click="Button_Click"/>
-        <Button Grid.Row="4" Grid.Column="3" Margin="5" Content="=" Click="Button_ClickEquals"/>
+        <Button Grid.Row="3" Margin="5" Content="6" Click="Button_Click"/>
+        <Button  Grid.Row="3" Grid.Column="1" Margin="5" Content="5" Click="Button_Click"/>
+        <Button  Grid.Row="3" Grid.Column="2" Margin="5" Content="4" Click="Button_Click"/>
+        <Button Grid.Row="3" Grid.Column="3" Margin="5" Content="-" Click="Button_ClickAdd"/>
+        <Button  Grid.Row="4" Margin="5" Content="3" Click="Button_Click"/>
+        <Button  Grid.Row="4" Grid.Column="1" Margin="5" Content="2" Click="Button_Click"/>
+        <Button  Grid.Row="4" Grid.Column="2" Margin="5" Content="1" Click="Button_Click"/>
+        <Button  Grid.Row="4" Grid.Column="3" Margin="5" Content="*" Click="Button_ClickAdd"/>
+        <Button  Grid.Row="5" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Content="0" Click="Button_Click"/>
+        <Button  Grid.Row="5" Margin="5" Content="C" Click="Button_ClickReset"/>
+        <Button  Grid.Row="5" Grid.Column="3" Margin="5" Content="/" Click="Button_ClickAdd"/>
+        <Button Grid.Row="6" Grid.Column="3" Margin="5" Content="=" Click="Button_ClickEquals"/>
+        <Button  Grid.Row="6" Margin="5" Content="-/+" Click="Button_ClickSign"/>
+        <Button  Grid.Row="6" Grid.Column="1" Margin="5" Content="Delete" Click="Button_ClickDelete"/>
+        <Button  Grid.Row="6" Grid.Column="2" Margin="5" Content="," Click="Button_Clickfloat"/>
 
     </Grid>
 </Window>
