@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kalkulator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="500">
-    <Grid>
+    
+    <Grid Background="DarkCyan">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -24,31 +25,44 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        
+
+        <Grid.Resources>
+            <Style x:Key="styleButton" TargetType="Button">
+                <Setter Property="Background" Value="#112233" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="Margin" Value="5" />
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Foreground" Value="#122" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
         
        <TextBlock x:Name="result" TextAlignment="Right" FontSize="35" Grid.ColumnSpan="4" />
        <TextBlock x:Name="numbers" TextAlignment="Right" FontSize="25" Margin="0,5,0,0" Grid.Row="1" Grid.ColumnSpan="4" />
 
-        <Button Grid.Row="2" Margin="5" Content="9" Click="Button_Click" />
-        <Button  Grid.Row="2" Grid.Column="1" Margin="5" Content="8" Click="Button_Click" />
-        <Button  Grid.Row="2" Grid.Column="2" Margin="5" Content="7" Click="Button_Click" />
-        <Button Grid.Row="2" Grid.Column="3" Margin="5" Content="+" Click="Button_ClickAdd" />
-        <Button Grid.Row="3" Margin="5" Content="6" Click="Button_Click"/>
-        <Button  Grid.Row="3" Grid.Column="1" Margin="5" Content="5" Click="Button_Click"/>
-        <Button  Grid.Row="3" Grid.Column="2" Margin="5" Content="4" Click="Button_Click"/>
-        <Button Grid.Row="3" Grid.Column="3" Margin="5" Content="-" Click="Button_ClickAdd"/>
-        <Button  Grid.Row="4" Margin="5" Content="3" Click="Button_Click"/>
-        <Button  Grid.Row="4" Grid.Column="1" Margin="5" Content="2" Click="Button_Click"/>
-        <Button  Grid.Row="4" Grid.Column="2" Margin="5" Content="1" Click="Button_Click"/>
-        <Button  Grid.Row="4" Grid.Column="3" Margin="5" Content="*" Click="Button_ClickAdd"/>
-        <Button  Grid.Row="5" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Content="0" Click="Button_Click"/>
-        <Button  Grid.Row="5" Margin="5" Content="C" Click="Button_ClickReset"/>
-        <Button  Grid.Row="5" Grid.Column="3" Margin="5" Content="/" Click="Button_ClickAdd"/>
-        <Button Grid.Row="6" Grid.Column="3" Margin="5" Content="=" Click="Button_ClickEquals"/>
-        <Button  Grid.Row="6" Margin="5" Content="-/+" Click="Button_ClickSign"/>
-        <Button  Grid.Row="6" Grid.Column="1" Margin="5" Content="Delete" Click="Button_ClickDelete"/>
-        <Button  Grid.Row="6" Grid.Column="2" Margin="5" Content="," Click="Button_Clickfloat"/>
+        <Button Grid.Row="2" Margin="5" Content="9" Style="{StaticResource styleButton}" Click="Button_Click" />
+        <Button  Grid.Row="2" Grid.Column="1"  Content="8" Style="{StaticResource styleButton}" Click="Button_Click" />
+        <Button  Grid.Row="2" Grid.Column="2"  Content="7" Style="{StaticResource styleButton}" Click="Button_Click" />
+        <Button Grid.Row="2" Grid.Column="3" Content="+" Style="{StaticResource styleButton}" Click="Button_ClickAdd" />
+        <Button Grid.Row="3" Content="6" Style="{StaticResource styleButton}" Click="Button_Click"/>
+        <Button  Grid.Row="3" Grid.Column="1"  Content="5" Style="{StaticResource styleButton}" Click="Button_Click"/>
+        <Button  Grid.Row="3" Grid.Column="2"  Content="4" Style="{StaticResource styleButton}" Click="Button_Click"/>
+        <Button Grid.Row="3" Grid.Column="3"  Content="-" Style="{StaticResource styleButton}" Click="Button_ClickAdd"/>
+        <Button  Grid.Row="4"  Content="3" Style="{StaticResource styleButton}" Click="Button_Click"/>
+        <Button  Grid.Row="4" Grid.Column="1" Content="2" Style="{StaticResource styleButton}" Click="Button_Click"/>
+        <Button  Grid.Row="4" Grid.Column="2" Content="1" Style="{StaticResource styleButton}" Click="Button_Click"/>
+        <Button  Grid.Row="4" Grid.Column="3" Content="*" Style="{StaticResource styleButton}" Click="Button_ClickAdd"/>
+        <Button  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Content="0" Style="{StaticResource styleButton}" Click="Button_Click"/>
+        <Button  Grid.Row="5" Content="C" Style="{StaticResource styleButton}" Click="Button_ClickReset"/>
+        <Button  Grid.Row="5" Grid.Column="3" Content="/" Style="{StaticResource styleButton}" Click="Button_ClickAdd"/>
+        <Button Grid.Row="6" Grid.Column="3" Content="=" Style="{StaticResource styleButton}" Click="Button_ClickEquals"/>
+        <Button  Grid.Row="6" Content="-/+" Style="{StaticResource styleButton}" Click="Button_ClickSign"/>
+        <Button  Grid.Row="6" Grid.Column="1" Content="Delete" Style="{StaticResource styleButton}" Click="Button_ClickDelete"/>
+        <Button  Grid.Row="6" Grid.Column="2" Content="," Style="{StaticResource styleButton}" Click="Button_Clickfloat"/>
 
     </Grid>
 </Window>
